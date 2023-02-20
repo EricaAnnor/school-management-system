@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const Router = require("./routes")
-require("dotenv").config();
+//require("dotenv").config();
 
 const app = express();
 
@@ -20,8 +20,8 @@ db.once("open", function () {
 
 app.use(Router);
 
-app.listen(3001, () => {
-  console.log("Server is running at port 3001");
+app.listen(3000, () => {
+  console.log("Server is running at port 3000");
 });
 
 app.get(`/`, (req, res) => {
