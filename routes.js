@@ -23,5 +23,15 @@ app.get("/users", async (request, response) => {
     }
   });
 
+app.get("/:studentid", async (request, response) => {
+    const users = await userModel.find({student_id: request.params.studentid});
+  
+    try {
+      response.send(users);
+    } catch (error) {
+      response.status(500).send(error);
+    }
+});
+
 
   module.exports = app;
